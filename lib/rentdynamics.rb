@@ -17,8 +17,8 @@ module RentDynamics
       @base_url = development == false ? 'https://api.rentdynamics.com' : 'https://api-dev.rentdynamics.com'
     end
 
-    def get(endpoint, body)
-      headers = get_headers(endpoint, body)
+    def get(endpoint)
+      headers = get_headers(endpoint, body = nil)
       response = HTTP.headers(headers).get(@base_url + endpoint)
       return response
     end
@@ -34,7 +34,7 @@ module RentDynamics
       return response
     end
 
-    def put(endpoint)
+    def put(endpoint, body)
       headers = get_headers(endpoint, body)
       request_url = @base_url + endpoint
       response = HTTP.headers(headers).put(request_url, :json => body)
@@ -45,7 +45,7 @@ module RentDynamics
       data = timestamp.encode('utf-8') + url.encode('utf-8')
       if body
         sorted_body = sort_body(body)
-        sorted_json = JSON.generate(sorted_body).encode('utf-8')
+        sorted_json = JSON.generate(sorted_body).encode('utf-8').delete(' ')
         data += sorted_json
       end
       return OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), @secret_access_key, data)
@@ -70,7 +70,7 @@ module RentDynamics
         data.sort_by { |k, v| k }.each { |(key, value)|
           if value.is_a? String
             begin
-              parsed_value = JSON.parse(value)
+              parsed_value = JSON.generate(value)
               if parsed_value.is_a?(Hash) || parsed_value.is_a?(Array)
                 sorted_result[key] = sort_body(parsed_value)
               else
