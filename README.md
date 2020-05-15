@@ -1,8 +1,7 @@
 # Rentdynamics
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rentdynamics`. To experiment with that code, run `bin/console` for an interactive prompt.
+Used for accessing the RentDynamics API.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +21,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Basic usage is as follows:
+
+RentDynamics::Client.new(access_key, secret_access_key, development)
+
+Users will need to recieve an access_key and secret_access_key from RentDynamics, and the development is a boolean flag if you want to connect to the development environment or not (Defaults to false).
+
+Once you have an instance of the client the following actions are available:
+
+get - passing an endpoint
+post - passing an endpoint and a body
+put - passing an endpoint and a body
+delete - not implemented
 
 ## Development
 
@@ -32,7 +42,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rentdynamics. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/rentdynamics/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/rentdynamics/rentdynamics-rb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/rentdynamics/rentdynamics-rb/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -41,4 +51,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Rentdynamics project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rentdynamics/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Rentdynamics project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/rentdynamics/rentdynamics-rb/blob/master/CODE_OF_CONDUCT.md).
