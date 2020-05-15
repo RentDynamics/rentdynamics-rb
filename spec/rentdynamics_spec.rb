@@ -61,4 +61,30 @@ RSpec.describe RentDynamics do
     expect(sorted_body).to eq({ blue: [a: 1, b: 2, c: 5], orange: 5 })
   end
 
+  it "sort_body should handle hashes containing hashes with number values" do
+    payload = {
+        'orange': 5,
+        'blue': {
+            'yellow': 3,
+            'red': 4
+        }
+    }
+    rd_client = RentDynamics::Client.new('', '')
+    sorted_body = rd_client.sort_body(payload)
+    expect(sorted_body).to eq({ blue: { 'red': 4, 'yellow': 3 }, orange: 5 })
+  end
+
+  it "sort_body should handle hashes containing hashes with string values" do
+    payload = {
+        'orange': '5',
+        'blue': {
+            'yellow': '3',
+            'red': '4'
+        }
+    }
+    rd_client = RentDynamics::Client.new('', '')
+    sorted_body = rd_client.sort_body(payload)
+    expect(sorted_body).to eq({ blue: { 'red': '4', 'yellow': '3' }, orange: '5' })
+  end
+
 end
