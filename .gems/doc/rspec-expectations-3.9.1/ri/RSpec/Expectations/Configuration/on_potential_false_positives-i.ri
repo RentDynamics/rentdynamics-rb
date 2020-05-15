@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"!on_potential_false_positives:ETI"DRSpec::Expectations::Configuration#on_potential_false_positives;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?Indicates what RSpec will do about matcher use which will ;TI"Gpotentially cause false positives in tests, generally you want to ;TI"5avoid such scenarios so this defaults to `true`.;T:
+@fileI",lib/rspec/expectations/configuration.rb;T:0@omit_headings_from_table_of_contents_below0F@I"'RSpec::Expectations::Configuration;TcRDoc::NormalClass0

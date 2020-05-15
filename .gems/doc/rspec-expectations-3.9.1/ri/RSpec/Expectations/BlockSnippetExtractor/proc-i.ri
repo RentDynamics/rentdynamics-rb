@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	proc:ETI"4RSpec::Expectations::BlockSnippetExtractor#proc;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"Qrubocop should properly handle `Struct.new {}` as an inner class definition.;T:
+@fileI"6lib/rspec/expectations/block_snippet_extractor.rb;T:0@omit_headings_from_table_of_contents_below0F@I"/RSpec::Expectations::BlockSnippetExtractor;TcRDoc::NormalClass0

@@ -1,0 +1,5 @@
+U:RDoc::Attr[iI"target:ETI"2RSpec::Expectations::ExpectationTarget#target;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"D@note this name aligns with `Minitest::Expectation` so that our;To:RDoc::Markup::Verbatim;	[I"A{InstanceMethods} module can be included in that class when
+;TI"!used in a Minitest context.
+;T:@format0o;
+;	[I"3@return [Object] the target of the expectation;T:
+@fileI"1lib/rspec/expectations/expectation_target.rb;T:0@omit_headings_from_table_of_contents_below0F@I"+RSpec::Expectations::ExpectationTarget;TcRDoc::NormalClass0
